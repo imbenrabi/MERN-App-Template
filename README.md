@@ -29,3 +29,7 @@ Node.js server serving React.Js app using es6 features(through Babel).
 ## Starting the server
 
 - run `yarn start:server` (nodemon keeps the process alive).
+
+## Roadmap
+
+- Adding auth middleware. 
