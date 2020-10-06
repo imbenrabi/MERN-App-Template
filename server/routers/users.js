@@ -1,4 +1,5 @@
 import express from 'express';
+import { User } from '../models/user'
 
 export class UsersRouter {
 
@@ -19,6 +20,17 @@ export class UsersRouter {
             //     let content = this.services.parsing.parseMobiError(e);
             //     return next(content);
             // }
+            res.send('FART!!!')
+        });
+        this.express.route('/users').post(async (req, res, next) => {
+            try {
+                let user = new User(req.body);
+                user = await user.save()
+                return next(user);
+            } catch (e) {
+                let content = this.services.parsing.parseError(e);
+                return next(content);
+            }
         });
 
     }
