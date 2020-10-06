@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 import bodyParser from 'body-parser';
 import compression from 'compression';
 import { services } from './services';
@@ -15,13 +16,21 @@ class Server {
         this.routers = routers;
         this.services = services;
         this.init();
+
+        // this.express.use(express.static(path.join(__dirname, '../build')))
     }
 
     init() {
-        console.log('Starting Mobilize gateway...');
+        console.log('Starting MERN stack server...');
+        this.initDatabase();
         this.initMiddlewares();
         this.initRouters();
         this.initHandlers();
+    }
+
+    initDatabase() {
+        console.log('Connecting to database...');
+        require('./db/mongoose');
     }
 
     initMiddlewares() {
