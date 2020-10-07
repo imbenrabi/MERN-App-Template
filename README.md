@@ -32,4 +32,6 @@ Node.js server serving React.Js app using es6 features(through Babel).
 
 ## Roadmap
 
-- Adding auth middleware. 
+- Adding auth middleware.
+- Adding second mongoose model.
+- Better abstracting of mongoResp service. 

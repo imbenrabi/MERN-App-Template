@@ -16,7 +16,7 @@ class Server {
         this.routers = routers;
         this.services = services;
         this.init();
-
+        /**uncomment the line below to serve the react app production build using the server */
         // this.express.use(express.static(path.join(__dirname, '../build')))
     }
 
